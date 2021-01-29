@@ -1,0 +1,63 @@
+/******* init css ********/
+
+$browser-default-font-size: 75px !default;
+html {
+  font-size: $browser-default-font-size;
+}
+// function方法字体换算
+@function basetorem($px) {
+  //$px为需要转换的字号
+  @return $px / $browser-default-font-size * 1rem;
+}
+@function torem($px) {
+  //$px为需要转换的字号，直接iPhone6设计稿值
+  @return $px/2 / $browser-default-font-size * 1rem;
+}
+@function topx($rem) {
+  //$rem为需要转换的字号
+  @return $rem * $browser-default-font-size / 1rem;
+}
+// mixin方法字体换算 pxtorem
+@mixin font-size($target) {
+  font-size: ($target / $browser-default-font-size) * 1rem;
+}
+
+// vant 组件样式重置
+// van-tag vw
+// .van-tag--round, .van-tag--round:after {
+//   content: "";
+// }
+// toast
+// .van-toast {
+//   border-radius: 9999px !important;
+// }
+.van-toast--bottom {
+  transform: translate3d(-50%,0,0) !important;
+
+  bottom: 30%;
+}
+// // dialog
+// .van-dialog{
+//   border-radius: 16px;
+//   width: 550px;
+// }
+// .van-dialog__message{
+//   font-size: 32px;
+//   color: #1C1C1C;
+//   text-align: left;
+//   line-height: 48px;
+// }
+// .van-button--default {
+// font-size: 32px;
+// height: 90px;
+// color: #999999;
+// }
+// .van-dialog__confirm, .van-dialog__confirm:active {
+// font-size: 32px;
+// height: 90px;
+// color: #00AAFF;
+// }
+// .van-hairline--top:after {
+//   border-top-width: 1px;
+//   top: -45%;
+// }

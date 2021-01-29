@@ -1,0 +1,1 @@
+export { default as VueNotice } from './vue-notice';
